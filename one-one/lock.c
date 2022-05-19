@@ -26,6 +26,7 @@ void thread_unlock(spinlock *sl){
 
 void mutexlock_init(mutexlock *lock){
     lock->flag = 0;
+    lock->sl.flag = 0;
 }
 
 void thread_mutex_lock(mutexlock *cm){
