@@ -124,8 +124,6 @@ void start_routine(void *tcb){
     // swtch() will invoke scheduler so that other thread can be scheduled
 }
 
-
-
 //IF its first thread , then give call to intialize_lib() to do initialization stuffs .
 //Creates a new thread to run the function passed as argument and initializes that thread along with 
 // its context
@@ -158,3 +156,14 @@ int thread_create(thread *td, void *start_func, void *para){
     timer_activate();
     return 0;
 }
+
+int thread_exit(void *retVal){
+
+    timer_deactivate();
+    curr_tcb->result = retVal;
+    arr_exited_threads = (int*)realloc(arr_exited_threads, (++count_exited_threads)*sizeof(int));
+    arr_exited_threads[count_exited_threads-1] = curr_tcb->tid;
+    swtch(); 
+}
+
+
