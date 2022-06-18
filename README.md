@@ -90,7 +90,7 @@ A mapping model refers to the way in which a thread created by the user maps to 
 
 ## Available APIs
 
-- `tlib` provides two mapping models and the desired model can be chosen without changing any API calls. The implementation remains abstract to the user programs.
+- `multi-lib` provides two mapping models and the desired model can be chosen without changing any API calls. The implementation remains abstract to the user programs.
 - Each of the two models provides the following set of API calls:
 
    1. <b>Thread APIs</b>
@@ -126,7 +126,7 @@ A mapping model refers to the way in which a thread created by the user maps to 
 
 ## Usage
 
-To use tlib in your programs, do the following:
+To use multi-lib in your programs, do the following:
 
 ```c
 // Use one of the macros to use the desired mapping
