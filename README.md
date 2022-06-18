@@ -1,5 +1,5 @@
 <div align="center">
-	<h1>tlib</h1>
+	<h1>multi-lib</h1>
    <h4>A multithreading library for Unix-like POSIX compliant systems</h4> 
 </div>
 <div align="center">
@@ -18,7 +18,7 @@
 
 ### About
 
-`tlib` is a multithreading library that lets programs control multiple flows of work that run in an interleaved manner and supports user level threads in either a `One-One` mapping model or a `Many-One` mapping model. `tlib` is available for Unix-like POSIX conformant operating systems.
+`multi-lib` is a multithreading library that lets programs control multiple flows of work that run in an interleaved manner and supports user level threads in either a `One-One` mapping model or a `Many-One` mapping model. `multi-lib` is available for Unix-like POSIX conformant operating systems.
 
 ### Building
 
@@ -26,7 +26,7 @@
    # Run the root directory of the project
    make
    # To compile the binaries run
-   make tlib
+   make multi-lib
 
    # To compile the test suite
    make alltest
@@ -40,7 +40,7 @@
 
 ### Mapping models
 
-A mapping model refers to the way in which a thread created by the user maps to the kernel level thread. There are three main types of which the two implemented in `tlib` are :
+A mapping model refers to the way in which a thread created by the user maps to the kernel level thread. There are three main types of which the two implemented in `multi-lib` are :
 
 1. <b>One-one model</b>
 
