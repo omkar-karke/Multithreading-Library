@@ -108,35 +108,31 @@ A mapping model refers to the way in which a thread created by the user maps to 
 
       1. <b>Spin Lock</b>
 
-         | Function         | Description                         |
-         | ---------------- | ----------------------------------- |
-         | `spin_init()`    | Initialize a spinlock object        |
-         | `spin_acquire()` | Acquire a spinlock                  |
-         | `spin_release()` | Release a spinlock                  |
+         | Function         	| Description                         |
+         | ---------------------| ----------------------------------- |
+         | `spinlock_init()`    | Initialize a spinlock object    |
+         | `thread_lock()` 	| Acquire a spinlock                   |
+         | `thread_unlock()` 	| Release a spinlock                 |
 
       2. <b>Mutex Lock</b>
 
-         | Function          | Description                      |
-         | ----------------- | -------------------------------- |
-         | `mutex_init()`    | Initialize a mutex object        |
-         | `mutex_acquire()` | Acquire a mutex                  |
-         | `mutex_release()` | Release a mutex                  |
+         | Function          	   | Description                      |
+         | ------------------------| -------------------------------- |
+         | `mutexlock_init()`      | Initialize a mutex object        |
+         | `thread_mutex_lock()`   | Acquire a mutex                  |
+         | `thread_mutex_unlock()` | Release a mutex                  |
 
 ## Usage
 
 To use multi-lib in your programs, do the following:
 
-```c
-// Use one of the macros to use the desired mapping
-#define ONE_ONE
-// #define MANY_ONE
-#include <stdio.h>
 
-#ifdef ONE_ONE
-   #include "src/OneOne/thread.h"
-#else
-   #include "src/ManyOne/thread.h"
-#endif
+FOR using one-one mapping
+```c
+
+#include <stdio.h>
+#include "one-one/thread.h"
+
 
 int global_var = 0;
 void func1(){
@@ -153,8 +149,40 @@ void func2(){
 
 int main(){
    thread t1,t2;
-   thread_create(&t1, NULL, func1, NULL);
-   thread_create(&t2, NULL, func2, NULL);
+   thread_create(&t1, func1, NULL , JOINABLE);
+   thread_create(&t2, func2, NULL , JOINABLE);
+   thread_join(t1,NULL);
+   thread_join(t2,NULL);
+   return 0;
+}
+
+```
+
+
+FOR using many-one mapping
+```c
+
+#include <stdio.h>
+#include "many-one/thread.h"
+
+
+int global_var = 0;
+void func1(){
+   printf("In thread routine 1");
+   global_var++;
+   return;
+}
+
+void func2(){
+   printf("In thread routine 2");
+   global_var++;
+   return;
+}
+
+int main(){
+   thread t1,t2;
+   thread_create(&t1, func1, NULL );
+   thread_create(&t2, func2, NULL );
    thread_join(t1,NULL);
    thread_join(t2,NULL);
    return 0;
