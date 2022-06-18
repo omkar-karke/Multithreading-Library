@@ -192,8 +192,11 @@ int main(){
 
 ## Running Tests
 
-The library comes with an extensive test suite for checking the implementation and testing the performance of the library. Each implementation has a set of unit tests that check the correctness of the APIs. There is a test for checking the synchronization primitves and a classic program of readers writers to check the working of synchronization primitives namely mutex and spinlock. 
-The test suite also includes a robust testing program that checks for the error handling and incorrect input cases. Finally there is a benchmark program which is a matrix multiplication program in the single and multi-threaded environments to compare the performance of using a threading library.
+* The library comes with an extensive test suite for checking the implementation and testing the performance of the library. 
+* Each implementation has a set of unit tests that check the correctness of the APIs. 
+* There is a test for checking the synchronization primitves and a classic program of readers writers to check the working of synchronization primitives namely mutex and spinlock. 
+* The test suite also includes a robust testing program that checks for the error handling and incorrect input cases. 
+* Finally there is a benchmark program which is a matrix multiplication program in the single and multi-threaded environments to compare the performance of using a threading library.
 
 To run the tests:
    ```sh
