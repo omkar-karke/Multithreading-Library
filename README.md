@@ -198,26 +198,6 @@ int main(){
 * The test suite also includes a robust testing program that checks for the error handling and incorrect input cases. 
 * Finally there is a benchmark program which is a matrix multiplication program in the single and multi-threaded environments to compare the performance of using a threading library.
 
-To run the tests:
-   ```sh
-
-   #Run the following in the root directory of the project
-
-   # Compile and auto run
-   make run
-
-   # Compile all binaries
-   make alltest
-   # Start the test suite
-   ./run.sh
-
-
-   # Check for memory leaks
-   make check-leak
-
-   ```
-
-The shell script will test all the functionalities mentioned in the test suite above. In addition, the memory leak checker uses valgrind to look at potential memory leaks in the test code.
 
 ## References
 
