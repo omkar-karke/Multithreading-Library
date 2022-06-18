@@ -3,7 +3,7 @@
    <h4>A multithreading library for Unix-like POSIX compliant systems</h4> 
 </div>
 <div align="center">
-   <img align="center" src="assets/logonew.png" >
+   <img align="center" width=20% src="assets/logonew.png" >
 </div>
 
 ## Contents
