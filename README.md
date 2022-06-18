@@ -14,6 +14,7 @@
 - [Available APIs](#available-apis)
 - [Usage](#usage)
 - [Running Tests](#running-tests)
+- Implementation Details(#implementation-details)
 - [References](#references)
 
 ### About
