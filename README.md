@@ -199,6 +199,14 @@ int main(){
 * Finally there is a benchmark program which is a matrix multiplication program in the single and multi-threaded environments to compare the performance of using a threading library.
 
 
+## Implementation Details
+* To know the implementation details of one-one threading model, please check out it's [README](one-one/README.md)
+* To know the implementation details of many-one threading model, please check out it's [README](many-one/README.md)
+
+
+
+
+
 ## References
 
 - [Pthread Programming Ch.6](https://maxim.int.ru/bookshelf/PthreadsProgram/htm/r_47.html)
