@@ -113,7 +113,6 @@ A mapping model refers to the way in which a thread created by the user maps to 
          | `spin_init()`    | Initialize a spinlock object        |
          | `spin_acquire()` | Acquire a spinlock                  |
          | `spin_release()` | Release a spinlock                  |
-         | `spin_trylock()` | Check if a spinlock can be acquired |
 
       2. <b>Mutex Lock</b>
 
@@ -122,7 +121,6 @@ A mapping model refers to the way in which a thread created by the user maps to 
          | `mutex_init()`    | Initialize a mutex object        |
          | `mutex_acquire()` | Acquire a mutex                  |
          | `mutex_release()` | Release a mutex                  |
-         | `mutex_trylock()` | Check if a mutex can be acquired |
 
 ## Usage
 
